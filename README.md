@@ -94,4 +94,4 @@ npm run report
 
 **Mital Dodiya** — Module Lead, Test Engineer
 
-[LinkedIn](https://linkedin.com/in/mital-dodiya-625014165) | [GitHub](https://github.com/Mital-Dodiya)
+[LinkedIn](https://linkedin.com/in/mitaldodiya) | [GitHub](https://github.com/Mital-Dodiya)
