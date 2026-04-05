@@ -1,0 +1,18 @@
+{
+  "name": "playwright-api-testing",
+  "version": "1.0.0",
+  "description": "API Testing Framework using Playwright — covering REST API validation with GET, POST, PUT, DELETE and Auth",
+  "scripts": {
+    "test": "playwright test",
+    "test:users": "playwright test tests/users.api.spec.ts",
+    "test:posts": "playwright test tests/posts.api.spec.ts",
+    "test:auth": "playwright test tests/auth.api.spec.ts",
+    "report": "playwright show-report",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.12.0",
+    "typescript": "^5.4.5"
+  }
+}
