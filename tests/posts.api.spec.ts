@@ -117,4 +117,42 @@ test.describe('Posts API', () => {
       await api.verifyStatusCode(response, 200);
     });
   });
+
+  test.describe('Negative Tests — Boundary & Edge Cases', () => {
+    test('should return 404 for post with id 0', async () => {
+      const response = await api.get('/posts/0');
+      await api.verifyStatusCode(response, 404);
+    });
+
+    test('should return 404 for post with very large id', async () => {
+      const response = await api.get('/posts/999999');
+      await api.verifyStatusCode(response, 404);
+    });
+
+    test('POST with empty body should still return 201', async () => {
+      const response = await api.post('/posts', {});
+      await api.verifyStatusCode(response, 201);
+    });
+
+    test('POST with special characters in title should return 201', async () => {
+      const response = await api.post('/posts', {
+        title: '!@#$%^&*() Special Characters',
+        body: 'Testing special characters in payload',
+        userId: 1,
+      });
+      await api.verifyStatusCode(response, 201);
+      const body = await response.json();
+      expect(body.title).toBe('!@#$%^&*() Special Characters');
+    });
+
+    test('POST with very long title should return 201', async () => {
+      const longTitle = 'A'.repeat(500);
+      const response = await api.post('/posts', {
+        title: longTitle,
+        body: 'Testing boundary for title length',
+        userId: 1,
+      });
+      await api.verifyStatusCode(response, 201);
+    });
+  });
 });
