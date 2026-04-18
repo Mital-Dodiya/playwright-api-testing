@@ -1,6 +1,10 @@
 # Playwright API Testing Framework
 
 ![API Tests](https://github.com/Mital-Dodiya/playwright-api-testing/actions/workflows/api.yml/badge.svg)
+![Playwright](https://img.shields.io/badge/Playwright-v1.44-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-v5.4-blue)
+![Tests](https://img.shields.io/badge/Tests-60%2B%20API%20Tests-orange)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 API test automation framework built with **Playwright + TypeScript** covering REST API validation — GET, POST, PUT, PATCH, DELETE, nested resources and response header validation.
 
