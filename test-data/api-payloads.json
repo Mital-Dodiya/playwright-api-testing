@@ -1,0 +1,58 @@
+{
+  "posts": {
+    "valid": {
+      "create": {
+        "title": "Automation Test Post",
+        "body": "This post was created via Playwright API automation framework",
+        "userId": 1
+      },
+      "update": {
+        "id": 1,
+        "title": "Updated Automation Post",
+        "body": "This post was updated via Playwright API automation framework",
+        "userId": 1
+      },
+      "patch": {
+        "title": "Patched Post Title"
+      }
+    },
+    "invalid": {
+      "emptyBody": {},
+      "specialChars": {
+        "title": "!@#$%^&*() Special Characters Test",
+        "body": "Testing special characters in API payload",
+        "userId": 1
+      },
+      "longTitle": {
+        "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "body": "Boundary test for maximum title length",
+        "userId": 1
+      }
+    },
+    "boundary": {
+      "minUserId": { "title": "Min userId test", "body": "Test body", "userId": 1 },
+      "maxUserId": { "title": "Max userId test", "body": "Test body", "userId": 10 }
+    }
+  },
+  "users": {
+    "validIds": [1, 2, 3, 4, 5],
+    "invalidIds": [0, -1, 9999, 99999],
+    "requiredFields": ["id", "name", "username", "email", "phone", "website"],
+    "fieldTypes": {
+      "id": "number",
+      "name": "string",
+      "username": "string",
+      "email": "string"
+    }
+  },
+  "todos": {
+    "validIds": [1, 2, 3],
+    "invalidIds": [0, 9999],
+    "requiredFields": ["id", "userId", "title", "completed"],
+    "completedStates": [true, false]
+  },
+  "comments": {
+    "requiredFields": ["id", "postId", "name", "email", "body"],
+    "emailPattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+  }
+}
